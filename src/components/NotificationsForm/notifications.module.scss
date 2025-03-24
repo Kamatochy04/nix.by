@@ -1,0 +1,115 @@
+.form {
+  position: relative;
+
+  border: 1px solid $inputs-default;
+  border-radius: 24px;
+  padding: 80px;
+  max-width: 520px;
+  width: 100%;
+  background: $bg-background;
+  z-index: 10;
+
+  .title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 120%;
+    color: $text-primary;
+  }
+  .block {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 143%;
+    color: $text-primary;
+
+    margin-top: 12px;
+
+    border: 1px solid $inputs-default;
+    border-radius: 12px;
+    padding: 16px 24px;
+    width: 100%;
+  }
+  &__footer {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-top: 32px;
+  }
+  &__title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: $text-primary;
+  }
+  .name {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 143%;
+    color: $text-tertiary;
+
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    span {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 143%;
+      color: $icons-active;
+    }
+  }
+  &__inf {
+    margin-top: 8px;
+
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 133%;
+    color: $text-tertiary;
+  }
+}
+.logoLink {
+  display: none;
+}
+
+.clouse_icon {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+.logo {
+  width: 76px;
+  height: 24px;
+
+  @include media-max($md) {
+    width: 70px;
+    height: 22px;
+  }
+}
+
+@media (max-width: 500px) {
+  .form {
+    height: 100vh;
+    padding: 88px 24px 0 24px;
+
+    position: fixed;
+    z-index: 100 !important;
+    left: 0;
+    .title {
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 133%;
+    }
+  }
+
+  .clouse_icon {
+    top: 10px;
+    right: 24px;
+    z-index: 100;
+  }
+
+  .logoLink {
+    display: block;
+    position: absolute;
+    top: 21px;
+    left: 24px;
+  }
+}

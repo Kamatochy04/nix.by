@@ -1,0 +1,68 @@
+.user {
+  &__header {
+    border: 1px solid #ffffff2e;
+    border-radius: 60px;
+    padding: 4px 8px 4px 4px;
+
+    display: grid;
+    grid-template-columns: 48px 1fr 65px;
+    align-items: center;
+    .sercle {
+      border-radius: 60px;
+      width: 48px;
+      height: 48px;
+      background: #ddc1ff;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 60%;
+      text-align: center;
+      text-transform: uppercase;
+
+      color: #01072b;
+    }
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding-left: 12px;
+  }
+  &__name {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 143%;
+    color: $text-primary;
+  }
+  &__last_time {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 133%;
+    color: rgba(255, 255, 255, 0.54);
+  }
+  &__raiting {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 143%;
+    text-align: right;
+    color: rgba(255, 255, 255, 0.96);
+
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    border-radius: 64px;
+    padding: 0px 12px;
+    width: 64px;
+    height: 40px;
+
+    backdrop-filter: blur(40px);
+    background: rgba(255, 255, 255, 0.12);
+
+    z-index: -1;
+  }
+}

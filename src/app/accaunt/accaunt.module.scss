@@ -1,0 +1,142 @@
+.container {
+  max-width: 1176px;
+  width: 100%;
+
+  margin: 0 auto;
+  @include media-max(1176px - 0.2) {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+.header {
+  &__title {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 100%;
+    color: #fff;
+  }
+}
+
+.wrapper {
+  margin-top: 28px;
+
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+
+  .user {
+    max-width: 676px;
+  }
+}
+
+.buttons {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  button {
+    z-index: 0;
+    position: relative;
+  }
+  &__input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  &__second {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 143%;
+    color: #000 !important;
+    backdrop-filter: blur(40px);
+
+    padding: 4px 8px;
+    border-radius: 64px;
+    height: 28px;
+
+    backdrop-filter: blur(40px);
+    background: $buttons-tertiary-default;
+    z-index: -1;
+  }
+  button {
+    cursor: pointer;
+
+    background: rgba(255, 255, 255, 0.12);
+    border: none;
+    padding: 10px 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: rgba(255, 255, 255, 0.96);
+
+    border-radius: 8px;
+  }
+}
+
+.reviews {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 240px;
+}
+
+.advertising {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  &_adaptive {
+    display: none;
+    justify-content: space-between;
+    gap: 24px;
+    margin-top: 32px;
+  }
+}
+
+.reviews {
+  &__header {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 117%;
+    color: rgba(255, 255, 255, 0.96);
+  }
+}
+
+@media (max-width: 1150px) {
+  .wrapper {
+    .user {
+      max-width: 100%;
+    }
+  }
+  .advertising {
+    display: none;
+    &_adaptive {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+  }
+}
+
+@media (max-width: $md) {
+  .header {
+    padding-top: 70px;
+  }
+}

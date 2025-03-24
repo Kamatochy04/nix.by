@@ -1,0 +1,70 @@
+.border {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.reviews {
+  &__item {
+    padding-bottom: 24px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .stars {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .text {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 156%;
+      color: rgba(255, 255, 255, 0.96);
+    }
+
+    .footer {
+      &__accaunt {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 150%;
+        color: rgba(255, 255, 255, 0.54);
+
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      &__time {
+        margin-top: 4px;
+
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 143%;
+        color: rgba(255, 255, 255, 0.54);
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+    }
+  }
+}
+
+.dote {
+  width: 2px;
+  height: 2px;
+  border-radius: 5px;
+  background: rgb(255, 255, 255);
+  display: block;
+}
+
+@media (max-width: 375px) {
+  .reviews {
+    &__item {
+      .text {
+        font-size: 16px;
+        line-height: 156%;
+      }
+    }
+  }
+}
