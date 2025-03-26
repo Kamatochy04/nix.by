@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { FC } from "react";
+import { FC, useState } from "react";
 
 import { CustomButton } from "../CustomButton";
 import styles from "./inviteFriendForm.module.scss";
@@ -15,6 +15,30 @@ type InviteFriendFormProps = {
 };
 
 export const InviteFriendForm: FC<InviteFriendFormProps> = ({ onClouse }) => {
+  const [isCopied, setIsCopied] = useState(false);
+  const referralLink = "https://nixbuy.com/referral?ref=uniqueID123123123";
+
+  const handleCopyClick = () => {
+    navigator.clipboard
+      .writeText(referralLink)
+      .then(() => {
+        setIsCopied(true);
+        setTimeout(() => setIsCopied(false), 1000);
+      })
+      .catch((err) => {
+        console.error("Failed to copy: ", err);
+        // Fallback для старых браузеров
+        const textArea = document.createElement("textarea");
+        textArea.value = referralLink;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand("copy");
+        document.body.removeChild(textArea);
+        setIsCopied(true);
+        setTimeout(() => setIsCopied(false), 1000);
+      });
+  };
+
   return (
     <form className={styles.form}>
       <Link href="/" className={styles.logoLink}>
@@ -27,27 +51,30 @@ export const InviteFriendForm: FC<InviteFriendFormProps> = ({ onClouse }) => {
       >
         <ClouseIcon />
       </CustomButton>
-      <h3 className={styles.title}>Приглашай друзей и зарабатывай</h3>
+      <h3 className={styles.title}>Приглашай друзей и зарабатывай</h3>
       <div className={styles.inf}>
         <p>
-          Получай 5% от покупок нового пользователя и 1% от его последующих
+          Получай 5% от покупок нового пользователя и 1% от его последующих
           покупок.
         </p>
         <p>
-          Начисления происходят моментально, а ты решаешь,
-          выводить ли их или использовать для новых покупок. Зарабатывай
-          на приглашении друзей — это просто!
+          Начисления происходят моментально, а ты решаешь, выводить ли их или
+          использовать для новых покупок. Зарабатывай на приглашении друзей —
+          это просто!
         </p>
       </div>
       <div className={styles.link}>
-        <p className={styles.link__label}>Ссылка на приглашение</p>
+        <p className={styles.link__label}>Ссылка на приглашение</p>
         <div className={styles.link__box}>
           <div className={styles.link__wrapper}>
-            <p>https://nixbuy.com/referral?ref=uniqueID123123123</p>
+            <p>{referralLink}</p>
           </div>
 
-          <div className={styles.link__icon}>
+          <div className={styles.link__icon} onClick={handleCopyClick}>
             <CopyIcon />
+            {isCopied && (
+              <span className={styles.copy_notification}>Скопировано!</span>
+            )}
           </div>
         </div>
       </div>
@@ -67,9 +94,9 @@ export const InviteFriendForm: FC<InviteFriendFormProps> = ({ onClouse }) => {
       </div>
       <div className={styles.buttons}>
         <CustomButton theme={"tertiary"}>
-          Доход: <span> 0 RUB</span>
+          Доход: <span> 0 RUB</span>
         </CustomButton>
-        <CustomButton theme={"tertiary"}>Перевести на баланс</CustomButton>
+        <CustomButton theme={"tertiary"}>Перевести на баланс</CustomButton>
       </div>
     </form>
   );

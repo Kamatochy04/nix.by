@@ -84,6 +84,7 @@ export const RegistrationForm = () => {
           isError={!!formik.errors.password}
           onChange={formik.handleChange}
           className={styles.input}
+          type="password"
         />
         <CaptchaForm
           id="login_captcha"
@@ -100,7 +101,7 @@ export const RegistrationForm = () => {
           type="submit"
           theme="tertiary"
           className={styles.submitBtn}
-          isDisabled={!formik.isValid || !formik.dirty}
+          // isDisabled={!formik.isValid || !formik.dirty}
         >
           Зарегистрироваться
         </CustomButton>

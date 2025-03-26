@@ -26,6 +26,7 @@ export const CustomTabs: FC<IProps> = ({
               [styles.activeBtn]: activeTab === item.id,
             })}
             onClick={() => setActiveTabHandler(item.id)}
+            theme={"secondary"}
           >
             {item.name}
           </CustomButton>

@@ -170,6 +170,52 @@
   display: none;
 }
 
+.link__icon {
+  position: relative;
+  cursor: pointer;
+
+  .copy_notification {
+    position: absolute;
+    top: -44px;
+    left: 0%;
+    transform: translateX(-70%);
+    background: #ffffff;
+    color: #000;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 143%;
+    padding: 6px 12px;
+    border-radius: 20px;
+    white-space: nowrap;
+    animation: fadeInOut 1s ease-in-out;
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 8px;
+      height: 8px;
+      background: #ffffff;
+      right: 20px;
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 @media (max-width: 500px) {
   .form {
     height: 100vh;

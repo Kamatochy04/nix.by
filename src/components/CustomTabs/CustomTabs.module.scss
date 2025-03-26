@@ -15,7 +15,7 @@
     width: 100%;
     height: 36px;
 
-    background: none;
+    background: none !important;
 
     font-weight: 700;
     font-size: 14px;
@@ -28,7 +28,7 @@
     }
 
     &.activeBtn {
-      background: $buttons-outline-2-default;
+      background: $buttons-outline-2-default !important;
 
       font-weight: 500;
 

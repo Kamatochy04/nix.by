@@ -6,6 +6,7 @@ import "@/assets/styles/index.scss";
 import { exo2, roboto } from "@/assets/fonts/fonts";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { MainBgColor } from "@/components/MainBgCollor/MainBgColor";
 import StoreProvider from "@/store/components/StoreProvider/StoreProvider";
 
 export const metadata: Metadata = {
@@ -21,11 +22,25 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${roboto.variable} ${exo2.variable}`}>
       <body>
+        <div
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "1920",
+            height: "1563",
+            zIndex: -1,
+          }}
+        >
+          <MainBgColor />
+        </div>
         <StoreProvider>
           <>
-            <Header />
-            {children}
-            <Footer />
+            <div className="main__container">
+              <Header />
+              {children}
+              <Footer />
+            </div>
           </>
         </StoreProvider>
         <ToastContainer

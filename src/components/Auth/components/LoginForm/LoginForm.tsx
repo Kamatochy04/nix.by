@@ -91,6 +91,7 @@ export const LoginForm: FC<IProps> = ({ onClose }) => {
           isError={!!formik.errors.password}
           onChange={formik.handleChange}
           className={styles.input}
+          type="password"
         />
         <CaptchaForm
           id="login_captcha"
@@ -105,7 +106,7 @@ export const LoginForm: FC<IProps> = ({ onClose }) => {
       <CustomButton
         type="submit"
         theme="tertiary"
-        isDisabled={!formik.isValid || !formik.dirty}
+        // isDisabled={!formik.isValid || !formik.dirty}
         className={styles.submitBtn}
       >
         Войти

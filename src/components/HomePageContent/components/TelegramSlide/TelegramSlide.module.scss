@@ -26,16 +26,27 @@
   }
 
   & .btn {
-    display: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 44px;
+    width: 139px;
+
+    line-height: 150%;
+
+    position: absolute;
+    bottom: 28px;
+    right: 36px;
 
     @include media-max($md) {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      height: 44px;
-
       margin-top: 20px;
+
+      justify-content: center;
+      position: relative;
+      width: 100%;
+      top: 0;
+      left: 0;
     }
   }
 }
